@@ -39,8 +39,8 @@ void loop() {
   int xVal = analogRead(JOYSTICK_X);
   int yVal = analogRead(JOYSTICK_Y);
 
-  int xOffset = map(xVal, 0, 650, -30, 30);
-  int yOffset = map(yVal, 0, 650, 15, -15);
+  int xOffset = map(xVal, 0, 1023, -32, 32);
+  int yOffset = map(yVal, 0, 1023, 16, -16);
 
   display.clearDisplay();
 
@@ -51,6 +51,6 @@ void loop() {
   drawDistortedCircle(SCREEN_WIDTH / 2 + xOffset / 8, SCREEN_HEIGHT / 2 + yOffset / 8, 32, xOffset / 6.4, yOffset / 6.4);
 
   display.display();
-  delay(50);
+  delay(150);
 }
 
